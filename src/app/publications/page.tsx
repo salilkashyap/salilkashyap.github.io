@@ -17,6 +17,10 @@ const HighlightAuthor = ({ text }: { text: string }) => {
 };
 
 const PublicationCard = ({ type, title, authors, details, index }: any) => {
+  const cleanedTitle = title
+    .replace(/^[“"\s]+/, "")
+    .replace(/[”",\s]+$/, "");
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -31,6 +35,7 @@ const PublicationCard = ({ type, title, authors, details, index }: any) => {
         border: '1px solid var(--border)',
         transition: 'transform 0.3s ease, box-shadow 0.3s ease',
         cursor: 'default',
+        width: '100%'
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = 'translateY(-5px)';
@@ -45,7 +50,7 @@ const PublicationCard = ({ type, title, authors, details, index }: any) => {
         {type}
       </div>
       <h3 className="text-serif" style={{ fontSize: '1.4rem', fontWeight: 500, marginBottom: '1rem', lineHeight: 1.4 }}>
-        {title}
+        {cleanedTitle}
       </h3>
       <p style={{ fontSize: '1.1rem', marginBottom: '0.5rem', lineHeight: 1.6, color: 'var(--foreground)', opacity: 0.9 }}>
         <HighlightAuthor text={authors} />
@@ -128,7 +133,7 @@ export default function Publications() {
 
   const [filter, setFilter] = useState('All');
   
-  const filterTabs = ['All', 'Journals', 'Conferences', 'Patents', 'Book Chapters'];
+  const filterTabs = ['All', 'Patents', 'Journals', 'Conferences', 'Book Chapters'];
 
   return (
     <main className="container" style={{ paddingBottom: '2rem', paddingTop: '4rem' }}>
@@ -161,6 +166,13 @@ export default function Publications() {
 
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           
+          {(filter === 'All' || filter === 'Patents') && (
+            <div style={{ marginBottom: '4rem' }}>
+              <h2 className="text-serif" style={{ fontSize: '2rem', marginBottom: '2rem', borderBottom: '1px solid var(--border)', paddingBottom: '1rem' }}>Patents</h2>
+              {patents.map((item, i) => <PublicationCard key={i} type="Patent" index={i % 10} {...item} />)}
+            </div>
+          )}
+
           {(filter === 'All' || filter === 'Journals') && (
             <div style={{ marginBottom: '4rem' }}>
               <h2 className="text-serif" style={{ fontSize: '2rem', marginBottom: '2rem', borderBottom: '1px solid var(--border)', paddingBottom: '1rem' }}>Journals</h2>
@@ -172,13 +184,6 @@ export default function Publications() {
             <div style={{ marginBottom: '4rem' }}>
               <h2 className="text-serif" style={{ fontSize: '2rem', marginBottom: '2rem', borderBottom: '1px solid var(--border)', paddingBottom: '1rem' }}>Conferences</h2>
               {conferences.map((item, i) => <PublicationCard key={i} type="Conference" index={i % 10} {...item} />)}
-            </div>
-          )}
-
-          {(filter === 'All' || filter === 'Patents') && (
-            <div style={{ marginBottom: '4rem' }}>
-              <h2 className="text-serif" style={{ fontSize: '2rem', marginBottom: '2rem', borderBottom: '1px solid var(--border)', paddingBottom: '1rem' }}>Patents</h2>
-              {patents.map((item, i) => <PublicationCard key={i} type="Patent" index={i % 10} {...item} />)}
             </div>
           )}
 
