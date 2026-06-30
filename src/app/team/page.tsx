@@ -24,7 +24,10 @@ export default function Team() {
     "Gangesh Gunjan",
     "Deepak Kumar Rathore (jointly with Dr. A. Rajesh): Part-time",
     "Faisal Zeeshan",
-    "Aditya Gupta"
+    "Aditya Gupta",
+    "Abhay Sharan",
+    "Reena Bishnoi",
+    "Asif Hoque"
   ];
 
   const currentMtech = [
