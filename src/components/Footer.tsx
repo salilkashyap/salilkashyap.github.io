@@ -4,16 +4,16 @@ import { usePathname } from "next/navigation";
 
 const pages = [
   { name: 'Home', path: '/' },
-  { name: 'Education', path: '/education' },
-  { name: 'Experience', path: '/experience' },
-  { name: 'Publications', path: '/publications' },
-  { name: 'Projects', path: '/projects' },
-  { name: 'Teaching', path: '/teaching' },
-  { name: 'Awards', path: '/awards' },
-  { name: 'Activities', path: '/activities' },
-  { name: 'Invited Talks', path: '/talks' },
-  { name: 'Research Team', path: '/team' },
-  { name: 'Service', path: '/service' }
+  { name: 'Education', path: '/education/' },
+  { name: 'Experience', path: '/experience/' },
+  { name: 'Publications', path: '/publications/' },
+  { name: 'Projects', path: '/projects/' },
+  { name: 'Teaching', path: '/teaching/' },
+  { name: 'Awards', path: '/awards/' },
+  { name: 'Activities', path: '/activities/' },
+  { name: 'Invited Talks', path: '/talks/' },
+  { name: 'Research Team', path: '/team/' },
+  { name: 'Service', path: '/service/' }
 ];
 
 export default function Footer() {
