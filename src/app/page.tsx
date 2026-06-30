@@ -1,65 +1,74 @@
-import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Home() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <main className="container" style={{ paddingBottom: '4rem' }}>
+      <motion.div variants={containerVariants} initial="hidden" animate="show">
+
+        {/* Hero Section */}
+        <motion.section variants={itemVariants} style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'center', marginTop: '4rem', marginBottom: '6rem' }}>
+
+          <div style={{ flex: '1 1 400px', display: 'flex', justifyContent: 'center' }}>
+            <img
+              src="/profile.jpg"
+              alt="Salil Kashyap"
+              className="squircle-mask"
+              style={{ width: '100%', maxWidth: '400px', height: '400px', objectFit: 'cover' }}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+          </div>
+
+          <div style={{ flex: '1 1 500px', fontSize: '1.1rem' }}>
+            <p style={{ marginBottom: '1.5rem' }}>
+              I am an Associate Professor in the <a href="#" className="text-salmon">Dept. of Electronics and Electrical Engineering</a> at <a href="#" className="text-salmon">IIT Guwahati</a>. Before that, I obtained my PhD in Electrical Communication Engineering from the Indian Institute of Science (IISc), Bangalore.
+            </p>
+            <p style={{ marginBottom: '1.5rem' }}>
+              If you are interested in working with me, <strong>I am always looking for motivated research scholars</strong>. You can reach out to me <a href="mailto:salilkashyap@iitg.ac.in" className="text-salmon">here</a>.
+              You can also view my complete list of publications on <a href="https://scholar.google.com/citations?user=NiYie-YAAAAJ&hl=en" target="_blank" rel="noreferrer" className="text-salmon">Google Scholar</a>.
+            </p>
+            <p>
+              My research broadly focuses on wireless communications and signal processing. I specialize in <a href="#" className="text-salmon">Massive MIMO</a>, Reconfigurable Intelligent Surfaces, and <a href="#" className="text-salmon">UAV communications</a>.
+            </p>
+          </div>
+
+        </motion.section>
+
+        {/* Research Section */}
+        <motion.section id="research" variants={itemVariants} style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', marginTop: '4rem', marginBottom: '6rem' }}>
+          <div style={{ flex: '1 1 100%' }}>
+            <h2 className="text-serif" style={{ fontSize: '2.5rem', marginBottom: '2rem' }}>Research Highlights</h2>
+            <p style={{ fontSize: '1.1rem', marginBottom: '1.5rem', maxWidth: '800px' }}>
+              We're developing technical solutions to mitigate risks and improve the performance of beyond 5G communication systems. See my <a href="https://scholar.google.com/citations?user=NiYie-YAAAAJ&hl=en" target="_blank" rel="noreferrer" className="text-salmon">Google Scholar profile</a> for my recent work, with some highlights below.
+            </p>
+            <div style={{ textAlign: 'center', margin: '1.5rem 0', maxWidth: '800px', color: 'var(--foreground)' }}>...</div>
+            <p style={{ fontSize: '1.1rem', marginBottom: '1.5rem', maxWidth: '800px' }}>
+              A significant portion of my research is spent developing mathematical models to evaluate the effects of Non-Orthogonal Multiple Access (NOMA) and Orthogonal Time Frequency Space (OTFS) modulation. Following that, I worked on accelerating model training using ideas from probabilistic modelling and rethinking AI/ML in communications.
+            </p>
+
+            <div style={{ marginTop: '2rem', display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+              <a href="https://scholar.google.com/citations?user=NiYie-YAAAAJ&hl=en#d=spon&sq=NOMA" target="_blank" rel="noreferrer" className="text-salmon">Read more on NOMA</a>
+              <a href="https://scholar.google.com/citations?user=NiYie-YAAAAJ&hl=en#d=spon&sq=OTFS" target="_blank" rel="noreferrer" className="text-salmon">Read more on OTFS</a>
+            </div>
+
+          </div>
+        </motion.section>
+
+      </motion.div>
+    </main>
   );
 }
