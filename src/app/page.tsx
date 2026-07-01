@@ -42,7 +42,7 @@ export default function Home() {
               You can also view my complete list of publications on <a href="https://scholar.google.com/citations?user=NiYie-YAAAAJ&hl=en" target="_blank" rel="noreferrer" className="text-salmon">Google Scholar</a>.
             </p>
             <p>
-              My research broadly focuses on wireless communications and signal processing. I specialize in <a href="#" className="text-salmon">Massive MIMO</a>, Reconfigurable Intelligent Surfaces, and <a href="#" className="text-salmon">UAV communications</a>.
+              My research broadly focuses on wireless communications and signal processing with emphasis on modeling, algorithm design, optimization and performance analysis of 5G and beyond 5G wireless communication systems.
             </p>
           </div>
 
