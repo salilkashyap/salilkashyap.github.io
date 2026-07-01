@@ -52,18 +52,9 @@ export default function Home() {
         <motion.section id="research" variants={itemVariants} style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', marginTop: '4rem', marginBottom: '6rem' }}>
           <div style={{ flex: '1 1 100%' }}>
             <h2 className="text-serif" style={{ fontSize: '2.5rem', marginBottom: '2rem' }}>Research Highlights</h2>
-            <p style={{ fontSize: '1.1rem', marginBottom: '1.5rem', maxWidth: '800px' }}>
-              We're developing technical solutions to mitigate risks and improve the performance of beyond 5G communication systems. See my <a href="https://scholar.google.com/citations?user=NiYie-YAAAAJ&hl=en" target="_blank" rel="noreferrer" className="text-salmon">Google Scholar profile</a> for my recent work, with some highlights below.
+            <p style={{ fontSize: '1.1rem', marginBottom: '1.5rem', maxWidth: '800px', lineHeight: '1.7' }}>
+              I am actively working on reconfigurable intelligent surfaces (RIS) based wireless system design, wireless information and energy transfer, low hardware complexity multiple antenna techniques, resource allocation problems in cellular and cell-free massive MIMO, OTFS, NOMA, spectrum sharing networks, performance over time-varying channels, integrated sensing and communications.
             </p>
-            <div style={{ textAlign: 'center', margin: '1.5rem 0', maxWidth: '800px', color: 'var(--foreground)' }}>...</div>
-            <p style={{ fontSize: '1.1rem', marginBottom: '1.5rem', maxWidth: '800px' }}>
-              A significant portion of my research is spent developing mathematical models to evaluate the effects of Non-Orthogonal Multiple Access (NOMA) and Orthogonal Time Frequency Space (OTFS) modulation. Following that, I worked on accelerating model training using ideas from probabilistic modelling and rethinking AI/ML in communications.
-            </p>
-
-            <div style={{ marginTop: '2rem', display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
-              <a href="https://scholar.google.com/citations?user=NiYie-YAAAAJ&hl=en#d=spon&sq=NOMA" target="_blank" rel="noreferrer" className="text-salmon">Read more on NOMA</a>
-              <a href="https://scholar.google.com/citations?user=NiYie-YAAAAJ&hl=en#d=spon&sq=OTFS" target="_blank" rel="noreferrer" className="text-salmon">Read more on OTFS</a>
-            </div>
 
           </div>
         </motion.section>
