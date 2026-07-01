@@ -133,7 +133,7 @@ export default function Publications() {
 
   const [filter, setFilter] = useState('All');
   
-  const filterTabs = ['All', 'Patents', 'Journals', 'Conferences', 'Book Chapters'];
+  const filterTabs = ['All', 'Journals', 'Patents', 'Conferences', 'Book Chapters'];
 
   return (
     <main className="container" style={{ paddingBottom: '2rem', paddingTop: '4rem' }}>
@@ -166,17 +166,17 @@ export default function Publications() {
 
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           
-          {(filter === 'All' || filter === 'Patents') && (
-            <div style={{ marginBottom: '4rem' }}>
-              <h2 className="text-serif" style={{ fontSize: '2rem', marginBottom: '2rem', borderBottom: '1px solid var(--border)', paddingBottom: '1rem' }}>Patents</h2>
-              {patents.map((item, i) => <PublicationCard key={i} type="Patent" index={i % 10} {...item} />)}
-            </div>
-          )}
-
           {(filter === 'All' || filter === 'Journals') && (
             <div style={{ marginBottom: '4rem' }}>
               <h2 className="text-serif" style={{ fontSize: '2rem', marginBottom: '2rem', borderBottom: '1px solid var(--border)', paddingBottom: '1rem' }}>Journals</h2>
               {journals.map((item, i) => <PublicationCard key={i} type="Journal" index={i % 10} {...item} />)}
+            </div>
+          )}
+
+          {(filter === 'All' || filter === 'Patents') && (
+            <div style={{ marginBottom: '4rem' }}>
+              <h2 className="text-serif" style={{ fontSize: '2rem', marginBottom: '2rem', borderBottom: '1px solid var(--border)', paddingBottom: '1rem' }}>Patents</h2>
+              {patents.map((item, i) => <PublicationCard key={i} type="Patent" index={i % 10} {...item} />)}
             </div>
           )}
 
